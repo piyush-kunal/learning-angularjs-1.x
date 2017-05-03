@@ -1,0 +1,70 @@
+<form class="form-horizontal" ng-init="refreshInterval=4000;noOfItemsToDisplay=5;">
+    <div class="form-group">
+        <label class="col-sm-4 control-label">
+            Stock Quotation:
+        </label>
+
+        <div class="col-sm-8">
+            <p class="form-control-static">
+                {{ stockQuotation | currency: ' ' }}
+            </p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="inputRefreshInterval" class="col-sm-4 control-label">Refresh Interval:</label>
+
+        <div class="col-sm-8">
+            <input type="text"
+                   class="form-control" id="inputRefreshInterval"
+                   ng-model="refreshInterval"
+                   ng-model-options="{debounce: 1000}"/>
+        </div>
+    </div>
+</form>
+
+<div class="row">
+    <div class="col-md-4">
+        <div>
+            <ng-radial-gauge data="gaugeData"/>
+        </div>
+    </div>
+    <div class="col-md-8">
+
+        <div class="input-group">
+            <input type="text" ng-model="noOfItemsToDisplay"
+                   readonly
+                   class="form-control" aria-label="...">
+
+            <div class="input-group-btn">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Display Only<span class="caret"></span></button>
+
+                <ul class="dropdown-menu dropdown-menu-right">
+                    <li><a ng-click="noOfItemsToDisplay=5;">Latest 5</a></li>
+                    <li><a ng-click="noOfItemsToDisplay=10;">Latest 10</a></li>
+                    <li><a ng-click="noOfItemsToDisplay=50;">Latest 50</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a ng-click="noOfItemsToDisplay=null;">All</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <table class="table table-responsive table-condensed">
+            <thead>
+            <tr>
+                <th>Time</th>
+                <th>Quote</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="historyItem in stockQuoteHistory | limitTo: noOfItemsToDisplay">
+                <td> {{ historyItem.time | date: 'hh:mm:ss' }}</td>
+                <td> {{ historyItem.quote | currency: '₹ ' }}</td>
+                <td> {{ historyItem.quote | gsStockHealthStatus:700 }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<div ng-init="noOfItemsToShow=5;">
+    <div class="col-md-6">
+        <div class="input-group">
+            <div class="input-group-btn">
+                <button type="button" class="btn btn-default dropdown-toggle"
+                        data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                    Show <span class="caret"></span>
+                </button>
+
+                <ul class="dropdown-menu dropdown-menu-right">
+                    <li><a ng-click="noOfItemsToShow=5;">Latest 5</a></li>
+                    <li><a ng-click="noOfItemsToShow=10;">Latest 10</a></li>
+                    <li><a ng-click="noOfItemsToShow=25;">Latest 25</a></li>
+                    <li><a ng-click="noOfItemsToShow=50;">Latest 50</a></li>
+                    <li><a ng-click="noOfItemsToShow=null;">All</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a>Table View</a></li>
+                    <li><a>Chart View</a></li>
+                </ul>
+            </div><!-- /btn-group -->
+        </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+
+    <table class="table table-responsive table-condensed">
+        <thead>
+        <tr>
+            <th>Time</th>
+            <th>Quote</th>
+            <th>Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="historyItem in stockQuoteHistoryData | limitTo: noOfItemsToShow">
+            <td> {{ historyItem.time | date: 'hh:mm:ss' }}</td>
+            <td> {{ historyItem.quotation | currency: '₹ ' }}</td>
+            <td> {{ historyItem.quotation | stockHealthStatus:800 | statusSymbol }}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

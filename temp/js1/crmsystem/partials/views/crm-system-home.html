@@ -1,0 +1,26 @@
+<br/>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="well well-sm">
+            <h5>Customer Profile Management</h5>
+            <h6>This would help to manage customer profiles retrieved from CRM System.</h6>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div>
+            <customer-search-panel search-string="customerSearchString" />
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3" ng-repeat="customer in customers | filter: {name: customerSearchString}">
+        <div>
+            <customer-viewer customer-info="customer"/>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+(function () {
+    'use strict';
+
+    // require('');
+   
+    var ngModuleName = 'com.intsol.modules.common.services';
+    var angular = require('angular');
+    var definitions = require('./defs/-defs');
+    
+    var ngDependencies =
+        [
+        ];
+
+    var moduleObject = angular.module(ngModuleName, ngDependencies);
+
+})();

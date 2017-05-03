@@ -1,0 +1,37 @@
+<div ng-show="!authStatus">
+    <form class="navbar-form navbar-right">
+        <div class="form-group">
+            <input type="text"
+                   ng-model="userName"
+                   placeholder="Email" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <input type="password"
+                   ng-model="password"
+                   placeholder="Password" class="form-control">
+        </div>
+
+        <button type="submit" class="btn btn-success" ng-click="login()">
+            Sign in
+        </button>
+
+        <span ng-show="errorMessage" title="{{ errorMessage }}">
+            Login Failed!
+        </span>
+    </form>
+</div>
+
+<div ng-show="authStatus">
+    <form class="navbar-form navbar-right">
+
+        <span style="color: white;">Welcome {{ userName }}, </span>
+
+        &nbsp;
+
+        <button type="button" class="btn btn-danger"
+                ng-click="logout()">
+            Sign Out
+        </button>
+    </form>
+</div>

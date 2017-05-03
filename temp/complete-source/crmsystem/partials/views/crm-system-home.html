@@ -1,0 +1,33 @@
+<br/>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="well well-sm">
+            <h3>Customers Profiles Management Dashboard</h3>
+            <h4>This would help to manager all customer profiles.</h4>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <span>Customer Search Panel</span>
+            </div>
+
+            <div class="panel-body">
+                <div gs-customer-search-panel
+                     search-string="customerSearchString" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3" ng-repeat="customer in customers | filter: {name: customerSearchString}">
+        <div>
+            <gs-customer-thumnail-viewer customer-info="customer" />
+        </div>
+    </div>
+</div>

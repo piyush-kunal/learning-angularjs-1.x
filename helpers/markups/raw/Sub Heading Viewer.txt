@@ -1,0 +1,13 @@
+<div>
+    <h2>
+        <!-- TODO: Title -->
+    </h2>
+
+    <p>
+        <!-- TODO: Description -->
+    </p>
+
+    <p>
+        <a class="btn btn-default" href="#" role="button">View details &raquo;</a>
+    </p>
+</div>

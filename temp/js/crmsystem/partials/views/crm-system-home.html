@@ -1,0 +1,30 @@
+<br/>
+<div class='container'>
+    <div class='row'>
+        <div class='well well-sm'>
+            <h5>Customer Portfolio Management Dashboard</h5>
+            <h6>This view would help to search and manage customer portfolios from CRM Backend System.</h6>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='col-md-6'>
+            <div class='panel panel-primary'>
+                <div class='panel-heading'>
+                    <span style='color:white;'>
+                    Customer Search Panel
+                </span>
+                </div>
+                <div class='panel-body'>
+                    <customer-search-panel search-string='customerNameSearchString' />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='col-md-3' ng-repeat="customer in customers | filter: { name: customerNameSearchString }">
+            <div>
+                <customer-viewer customer-info='customer' />
+            </div>
+        </div>
+    </div>
+</div>

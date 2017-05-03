@@ -1,0 +1,34 @@
+<div ng-show="!authStatus">
+    <form class="navbar-form navbar-right">
+        <div class="form-group">
+            <input type="text"
+                   ng-model="userName"
+                   placeholder="User Name" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <input type="password" placeholder="Password"
+                   ng-model="password"
+                   class="form-control">
+        </div>
+
+        <button type="button"
+                ng-click="login()"
+                id="btnSignIn"
+                class="btn btn-success">
+            Sign in
+        </button>
+    </form>
+</div>
+
+<div ng-show="authStatus">
+    <form class="navbar-form navbar-right">
+        <span style="color: white;" id="welcomeMessage">Welcome {{ userName }}, </span>
+
+        <button type="button"
+                ng-click="logout()"
+                class="btn btn-success">
+            Signout
+        </button>
+    </form>
+</div>

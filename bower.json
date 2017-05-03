@@ -1,0 +1,23 @@
+{
+  "name": "ngweb",
+  "description": "this is a simple angular web.",
+  "main": "index.js",
+  "authors": [
+    "jd.ramkumar@gmail.com"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "training"
+  ],
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,135 @@
+<br/>
+
+<div ng-show="!saveStatus">
+    <div class="row">
+        <div class="col-md-10">
+            <div class="well well-sm">
+                <h5>New Customer Portfolio Management</h5>
+                <h6>This would help to create a new customer record in the CRM System</h6>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-10">
+            <form name="customerForm" novalidate class="form-horizontal">
+                <div class="form-group">
+                    <label for="inputCustomerId" class="col-sm-2 control-label">Customer Id:</label>
+
+                    <div class="col-sm-10">
+                        <p class="form-control-static"> </p>
+                        <input type="hidden"
+                               name="id"
+                               id="inputCustomerId"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputCustomerName" class="col-sm-2 control-label">Customer Name:</label>
+
+                    <div class="col-sm-10">
+                        <input type="text"
+                               class="form-control"
+                               name="name"
+                               id="inputCustomerName" placeholder="Enter Customer Name Here ..."/>
+
+                        <div class="text-danger">
+                            Invalid Customer Name Specified!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputCustomerAddress" class="col-sm-2 control-label">Business Address:</label>
+
+                    <div class="col-sm-10">
+                        <textarea class="form-control"
+                                  name="address"
+                                  id="inputCustomerAddress" placeholder="Enter Customer Address Here ...">
+                        </textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputCreditLimit" class="col-sm-2 control-label">Credit Limit:</label>
+
+                    <div class="col-sm-10">
+                        <input type="text"
+                               class="form-control"
+                               name="credit"
+                               id="inputCreditLimit" placeholder="Enter Credit Limit Here ..."/>
+
+                        <div class="text-danger">
+                            Invalid Business Credit Limit Specified! (Valid Limit: 1000 - 10000)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputCustomerPhone" class="col-sm-2 control-label">Phone Number:</label>
+
+                    <div class="col-sm-10">
+                        <input type="text"
+                               class="form-control"
+                               name="phone"
+                               id="inputCustomerPhone" placeholder="Enter Customer Phone Here ..."/>
+
+                        <div class="text-danger">
+                            Invalid Business Phone Number Specified (Format: 000-0000000)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"
+                                       name="status" /> Active Status
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputCustomerRemarks" class="col-sm-2 control-label">Customer Remarks:</label>
+
+                    <div class="col-sm-10">
+                        <textarea class="form-control"
+                                  name="remarks"
+                                  id="inputCustomerRemarks" placeholder="Enter Customer Remarks Here ...">
+                        </textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <input type="button"
+                               class="btn btn-default" value="Save"/>
+
+                        <input type="reset" value="Reset"
+                               class="btn btn-danger"/>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div ng-show="saveStatus">
+    <div class="row">
+        <div class="col-md-10">
+            <div class="well well-sm">
+                <h5>Customer Profile - Transaction Status</h5>
+                <h6>Customer Information Processed Successfully,
+                    New Customer Profile Id : {{ customerRecord.id }}</h6>
+
+                <h6>
+                    <a>View Profile</a> |
+                    <a>View Dashboard</a> |
+                    <a>Customer Home</a>
+                </h6>
+            </div>
+        </div>
+    </div>
+</div>

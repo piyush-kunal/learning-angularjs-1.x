@@ -1,0 +1,86 @@
+<br/>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="well well-sm">
+            <h3>Customer Dashboard</h3>
+            <h4>This would help to view customer profile, order history and current stock quoations.</h4>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <a data-toggle="collapse" href="#collapse1" class="text-right">
+                    <span style="color: white;">Customer Profile Viewer</span>
+                </a>
+            </div>
+
+            <div class="panel-collapse collapse in" id="collapse1">
+                <div class="panel-body">
+                    <div>
+                        <!-- TODO: Customer Profile Viewer -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <a data-toggle="collapse" href="#collapse3" class="text-right">
+                    <span style="color: white;">Live Stock Viewer</span>
+                </a>
+            </div>
+
+            <div class="panel-collapse collapse in" id="collapse3">
+                <div class="panel-body">
+                    <div>
+                        <!-- TODO: Stock Viewer -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <a data-toggle="collapse" href="#collapse2" class="text-right">
+                    <span style="color: white;">Order Transactions Viewer</span>
+                </a>
+            </div>
+
+            <div class="panel-collapse collapse in" id="collapse2">
+                <div class="panel-body">
+                    <div>
+                        <!-- TODO: Order Viewer -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <a data-toggle="collapse" href="#collapse4" class="text-right">
+                        <span style="color: white;">Order Transactions Viewer</span>
+                    </a>
+                </div>
+    
+                <div class="panel-collapse collapse in" id="collapse4">
+                    <div class="panel-body">
+                        <div>
+                            <!-- TODO: Order Chart Viewer -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>

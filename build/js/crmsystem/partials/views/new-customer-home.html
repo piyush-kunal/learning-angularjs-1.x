@@ -1,0 +1,45 @@
+<br/>
+
+<div ng-show="!saveStatus">
+    <div class="row">
+        <div class="col-md-10">
+            <div class="well well-sm">
+                <h5>New Customer Portfolio Management</h5>
+                <h6>This would help to create a new customer record in the CRM System</h6>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-10">
+            <div>
+                <new-customer-form/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-show="saveStatus">
+    <div class="row">
+        <div class="col-md-10">
+            <div class="well well-sm">
+                <h5>Customer Profile - Transaction Status</h5>
+                <h6>Customer Information Processed Successfully,
+                    New Customer Profile Id : {{ customerRecord.id }}</h6>
+
+                <h6>
+                    <a>View Profile</a> |
+                    <a>View Dashboard</a> |
+                    <a>Customer Home</a>
+                </h6>
+
+                <br/>
+
+                <h6>
+                    Redirecting to 'CRM System Profile Management View' in
+                    {{ refreshCounter }} second(s) ...
+                </h6>
+            </div>
+        </div>
+    </div>
+</div>

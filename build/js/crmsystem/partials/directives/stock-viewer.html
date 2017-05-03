@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-md-12">
+        <form class="form-horizontal" ng-init="refreshInterval=4000;">
+            <div class="form-group">
+                <label class="col-sm-4 control-label">Stock Quotation:</label>
+                <div class="col-sm-8">
+                    <p class="form-control-static">
+                        {{ quotation | currency: '₹ '}}
+                    </p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputRefreshInterval" class="col-sm-4 control-label">Refresh Interval:</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control"
+                           ng-model="refreshInterval"
+                           id="inputRefreshInterval"
+                           ng-model-options="{debounce: 500}"/>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div ng-radial-gauge data="gaugeData" />
+    </div>
+
+    <div class="col-md-6">
+        <div>
+            <stock-history-viewer stock-quote-history-data="stockQuotesHistory"/>
+        </div>
+    </div>
+</div>
